@@ -1,0 +1,204 @@
+﻿@model IEnumerable<DungeonMasterData.Models.Game>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<style>
+    #GameContainer {
+        margin-top: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: groove;
+        background-color: black;
+        color: limegreen;
+    }
+
+    #TextContainer {
+        padding-top: 100px;
+    }
+
+    #Name {
+        padding-left: 10px;
+    }
+
+    #DateCreated {
+        padding-left: 10px;
+    }
+
+    #LastPlayed {
+        padding-left: 10px;
+    }
+
+    #Party {
+        padding-left: 10px;
+    }
+
+    #NewGameButton {
+        background-color: greenyellow;
+    }
+
+    .OpenButton {
+        background-color: lightcoral !important;
+        color: darkmagenta !important;
+        border-color: gold !important;
+        border:solid;
+        padding:3px;
+    }
+
+    .EditButton {
+        background-color: navy !important;
+        color: yellow !important;
+        border-color: gold !important;
+        border: solid;
+        padding: 3px;
+    }
+
+    .EditButton:hover {
+        color: lawngreen !important;       
+    }
+
+    .OpenButton:hover {
+        color: aqua !important;
+    }
+
+    .DeleteButton {
+        background-color: red !important;
+        color: darkgrey !important;
+        border-color: gold !important;
+        border: solid;
+        padding: 3px;
+    }
+
+    .DeleteButton:hover {
+        color:black !important;
+    }
+
+    .NewButton {
+        background-color: forestgreen !important;
+        color: yellow !important;
+        border-color: black !important;
+        border: groove;
+        padding: 3px;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    a:hover {
+        color: tan !important;
+        text-decoration: none;
+    }
+
+    .input-group {
+        color:red;
+        background-color:darkgrey;
+        padding:5px;
+        border: solid;
+        border-color: sandybrown;
+    }
+</style>
+
+@foreach (var item in Model)
+{
+<div id="GameContainer">
+    <div class="row">
+        <div class="col-md-2">
+            <label id="Name">Name: </label>
+        </div>
+        <div class="col-md-2">
+            <label  class="input-group" id="NameInput">@Html.DisplayFor(modelItem => item.Name)</label>
+        </div>
+        <div class="col-md-5" style="text-align:right;">
+            <label id="Game Master">Game Master: </label>
+        </div>
+        <div class="col-md-2">
+            <label  class="input-group" id="GMInput">@Html.DisplayFor(modelItem => item.GameMaster)</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <label id="DateCreated">Date Created: </label>
+        </div>
+        <div class="col-md-2">
+            <label  class="input-group" id="DateCreatedInput"> @Html.DisplayFor(model => item.DateCreated)</label>
+        </div>
+    </div>
+
+    <div class="row" id="TextContainer">
+        <div class="col-md-2">
+            <label id="LastPlayed">Last Played:</label>
+        </div>
+        <div class="col-md-2">
+            <label class="input-group" id="LastPlayedInput">@Html.DisplayFor(model => item.DateLastOpened)</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label id="Party">Party:</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-11">
+            <div style="padding-left:10px;">
+                @*<button class="OpenButton" id="OpenButton">Open</button>*@
+                @Html.ActionLink("Open", "Details", new { id = item.Id }, new { @class = "OpenButton" }) | @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "EditButton" })
+            </div>
+        </div>
+        <div class="col-md-1">
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "DeleteButton" })
+        </div>
+    </div>
+</div>
+}
+
+<div class="NewButton">
+    @Html.ActionLink("Create New Game", "Create")
+</div>
+
+
+
+
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameMaster)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateLastOpened)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameMaster)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateCreated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateLastOpened)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>*@

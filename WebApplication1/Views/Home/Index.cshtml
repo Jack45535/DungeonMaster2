@@ -1,0 +1,108 @@
+﻿@model IEnumerable<DungeonMasterData.Models.Game>
+
+
+
+<style>
+   #GameContainer {
+        margin-top:50px;
+        padding-top:10px;
+        padding-bottom: 10px;
+        border:groove;
+        background-color:black;
+        color:limegreen;
+    }
+
+    #TextContainer {
+        padding-top: 100px;
+    }
+
+    #Name{
+        padding-left:10px;
+    }
+
+    #DateCreated {
+        padding-left: 10px;
+    }
+
+    #LastPlayed {
+        padding-left: 10px;
+    }
+
+    #Party {
+        padding-left: 10px;
+    }
+
+    #NewGameButton {
+        background-color: greenyellow;
+    }
+
+    #OpenButton {
+        background-color: lightcoral;
+        color:darkmagenta;
+        border-color:gold;
+    }
+
+    button:hover{
+        color:aqua !important;
+    }
+</style>
+
+
+<div id="GameContainer">
+    <div class="row">
+        <div class="col-md-2">
+            <label id="Name">Name: </label>
+        </div>
+        <div class="col-md-2">
+            <label id="NameInput"></label>
+        </div>
+        <div class="col-md-5"style="text-align:right;">
+            <label id="Game Master">Game Master: </label>
+        </div>
+        <div class="col-md-2">
+            <label id="GMInput"></label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <label id="DateCreated">Date Created: </label>
+        </div>
+        <div class="col-md-2">
+        <label id="DateCreatedInput"></label>
+        </div>
+    </div>
+
+    <div class="row" id="TextContainer">
+        <div class="col-md-2">
+            <label id="LastPlayed">Last Played:</label>
+        </div>
+        <div class="col-md-2">
+            <label id="LastPlayedInput"></label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label id="Party">Party:</label>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-md-12" >
+                <div style="padding-left:10px;">
+                    <button id="OpenButton">Open</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" style="padding-top: 100px;">
+        <div style="padding-left:10px">
+            <button id="NewGameButton">New Game</button>
+        </div>
+     </div>
+</div>
+
+
+
