@@ -199,6 +199,8 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BagsController.cs" />
+    <Compile Include="Controllers\CharactersController.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -250,6 +252,16 @@
     <Content Include="Views\Game\Create.cshtml" />
     <Content Include="Views\Game\Edit.cshtml" />
     <Content Include="Views\Game\Delete.cshtml" />
+    <Content Include="Views\Characters\Create.cshtml" />
+    <Content Include="Views\Characters\Delete.cshtml" />
+    <Content Include="Views\Characters\Details.cshtml" />
+    <Content Include="Views\Characters\Edit.cshtml" />
+    <Content Include="Views\Characters\Index.cshtml" />
+    <Content Include="Views\Bags\Create.cshtml" />
+    <Content Include="Views\Bags\Delete.cshtml" />
+    <Content Include="Views\Bags\Details.cshtml" />
+    <Content Include="Views\Bags\Edit.cshtml" />
+    <Content Include="Views\Bags\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

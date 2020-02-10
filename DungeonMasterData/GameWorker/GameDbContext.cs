@@ -11,6 +11,7 @@ namespace DungeonMasterData.GameWorker
     public class GameDbContext : DbContext
     {
         public DbSet<Game> Game { get; set; }
-
+        public DbSet<Character> Characters { get; set; }
+        public DbSet<Bag> Bags { get; set; }
     }
 }

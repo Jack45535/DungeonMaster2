@@ -116,11 +116,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameWorker\GameDbContext.cs" />
+    <Compile Include="GameWorker\IBagData.cs" />
     <Compile Include="GameWorker\ICharacterData.cs" />
     <Compile Include="GameWorker\InMemoryCharacterData.cs" />
     <Compile Include="GameWorker\InMemoryGameData.cs" />
     <Compile Include="GameWorker\IGameData.cs" />
+    <Compile Include="GameWorker\SQLBagData.cs" />
+    <Compile Include="GameWorker\SQLCharacterData.cs" />
     <Compile Include="GameWorker\SqlGameData.cs" />
+    <Compile Include="Migrations\202002092113032_InitialCreate.cs" />
+    <Compile Include="Migrations\202002092113032_InitialCreate.designer.cs">
+      <DependentUpon>202002092113032_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002092222015_Amber.cs" />
+    <Compile Include="Migrations\202002092222015_Amber.designer.cs">
+      <DependentUpon>202002092222015_Amber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002092340341_Blue.cs" />
+    <Compile Include="Migrations\202002092340341_Blue.designer.cs">
+      <DependentUpon>202002092340341_Blue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002092349063_Cream.cs" />
+    <Compile Include="Migrations\202002092349063_Cream.designer.cs">
+      <DependentUpon>202002092349063_Cream.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Bag.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +149,20 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002092113032_InitialCreate.resx">
+      <DependentUpon>202002092113032_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002092222015_Amber.resx">
+      <DependentUpon>202002092222015_Amber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002092340341_Blue.resx">
+      <DependentUpon>202002092340341_Blue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002092349063_Cream.resx">
+      <DependentUpon>202002092349063_Cream.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

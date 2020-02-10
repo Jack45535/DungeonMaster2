@@ -11,8 +11,8 @@ namespace DungeonMasterData.GameWorker
     {
         IEnumerable<Character> GetAll();
         Character Get(int id);
-        void Add(Character game);
-        void Edit(Character game);
+        void Add(Character character);
+        void Edit(Character character);
         void Delete(int id);
     }
 }

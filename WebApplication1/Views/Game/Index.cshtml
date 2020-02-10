@@ -144,7 +144,8 @@
         <div class="col-md-11">
             <div style="padding-left:10px;">
                 @*<button class="OpenButton" id="OpenButton">Open</button>*@
-                @Html.ActionLink("Open", "Details", new { id = item.Id }, new { @class = "OpenButton" }) | @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "EditButton" })
+                @*@Html.ActionLink("Open", "Details", new { id = item.Id }, new { @class = "OpenButton" }) | @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "EditButton" })*@
+                @Html.ActionLink("Open", "Test", "Characters", new { id = item.Id }, new { @class = "OpenButton" }) | @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "EditButton" })
             </div>
         </div>
         <div class="col-md-1">
