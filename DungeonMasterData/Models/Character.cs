@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -24,9 +25,10 @@ namespace DungeonMasterData.Models
 
         public int Age { get; set; }
 
+        [DisplayName("General Description")]
         public string CharDesc { get; set; }
 
-
+        [DisplayName("Platinum")]
         public int Plat { get; set; }
 
         public int Gold { get; set; }
@@ -35,11 +37,13 @@ namespace DungeonMasterData.Models
 
         public int Copper { get; set; }
 
-
+        [DisplayName("Strength")]
         public int Str { get; set; }
 
+        [DisplayName("Intelligence")]
         public int Int { get; set; }
 
+        [DisplayName("Dexterity")]
         public int Dex { get; set; }
 
         public int Luck { get; set; }

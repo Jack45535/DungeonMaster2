@@ -4,114 +4,158 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<style>
+    #Contain {
+        margin-top: 30px;
+        margin-bottom:10px;
+        background-color: lightgrey;
+        padding: 10px;
+        border:groove;
+    }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Game.Name)
-        </th>
-        <th>
+    #NameRow {
+        
+    }
+
+    #DescCont {
+        padding-top:10px;
+    }
+
+    #MoneyRow {
+        padding-top: 10px;
+    }
+
+    #StatCont {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #CharIn {
+        color: red;
+    }
+  
+</style>
+
+
+@foreach (var item in Model)
+{
+<div id="Contain">
+    <div class="row" id="NameRow">
+        <div class="col-md-1">
             @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Owner)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Age)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CharDesc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Plat)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Gold)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Silver)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Copper)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Str)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Int)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Dex)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Luck)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Speed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Charisma)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Game.Name)
-        </td>
-        <td>
+        </div>
+        <div class="col-md-1">
             @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
+        </div>
+        <div class="col-md-1">
+            @Html.DisplayNameFor(model => model.Owner)
+        </div>
+        <div class="col-md-1">
             @Html.DisplayFor(modelItem => item.Owner)
-        </td>
-        <td>
+        </div>
+        <div class="col-md-1">
+            @Html.DisplayNameFor(model => model.Age)
+        </div>
+        <div class="col-md-1">
             @Html.DisplayFor(modelItem => item.Age)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CharDesc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Plat)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gold)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Silver)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Copper)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Str)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Int)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Dex)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Luck)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Speed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Charisma)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+        </div>
+    </div>
 
-</table>
+    <div class="row" id="DescCont">
+        <div class="col-md-2">
+            @Html.DisplayNameFor(model => model.CharDesc)
+        </div>
+        <div class="col-md-5">
+            @Html.DisplayFor(modelItem => item.CharDesc)
+        </div>
+    </div>
+
+    <div class="row" id="MoneyRow">
+        <div class="col-md-1">
+            @Html.DisplayNameFor(model => model.Plat)
+        </div>
+        <div class="col-md-1">
+            @Html.DisplayFor(modelItem => item.Plat)
+        </div>
+        <div class="col-md-1">
+            @Html.DisplayNameFor(model => model.Gold)
+        </div>
+        <div class="col-md-1">
+            @Html.DisplayFor(modelItem => item.Gold)
+        </div>
+        <div class="col-md-1">
+            @Html.DisplayNameFor(model => model.Silver)
+        </div>
+        <div class="col-md-1">
+            @Html.DisplayFor(modelItem => item.Silver)
+        </div>
+        <div class="col-md-1">
+            @Html.DisplayNameFor(model => model.Copper)
+        </div>
+        <div class="col-md-1">
+            @Html.DisplayFor(modelItem => item.Copper)
+        </div>
+    </div>
+
+
+    <div id="StatCont">
+        <div class="row">
+            <div class="col-md-1">
+                @Html.DisplayNameFor(model => model.Str)
+            </div>
+            <div class="col-md-1">
+                @Html.DisplayFor(modelItem => item.Str)
+            </div>
+            <div class="col-md-1">
+                @Html.DisplayNameFor(model => model.Luck)
+            </div>
+            <div class="col-md-1">
+                @Html.DisplayFor(modelItem => item.Luck)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                @Html.DisplayNameFor(model => model.Int)
+            </div>
+            <div class="col-md-1">
+                @Html.DisplayFor(modelItem => item.Int)
+            </div>
+
+            <div class="col-md-1">
+                @Html.DisplayNameFor(model => model.Speed)
+            </div>
+            <div class="col-md-1">
+                @Html.DisplayFor(modelItem => item.Speed)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                @Html.DisplayNameFor(model => model.Dex)
+            </div>
+            <div class="col-md-1">
+                @Html.DisplayFor(modelItem => item.Dex)
+            </div>
+
+            <div class="col-md-1">
+                @Html.DisplayNameFor(model => model.Charisma)
+            </div>
+            <div class="col-md-1" id="CharIn">
+                @Html.DisplayFor(modelItem => item.Charisma)
+            </div>
+        </div>
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </p>
+</div>
+            }
+
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+

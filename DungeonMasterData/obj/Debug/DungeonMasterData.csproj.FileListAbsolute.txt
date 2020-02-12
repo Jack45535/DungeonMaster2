@@ -300,3 +300,8 @@ C:\Users\jacke\source\repos\DungeonMaster2\DungeonMasterData\obj\Debug\DungeonMa
 C:\Users\jacke\source\repos\DungeonMaster2\DungeonMasterData\obj\Debug\DungeonMasterData.Migrations.Amber.resources
 C:\Users\jacke\source\repos\DungeonMaster2\DungeonMasterData\obj\Debug\DungeonMasterData.Migrations.Blue.resources
 C:\Users\jacke\source\repos\DungeonMaster2\DungeonMasterData\obj\Debug\DungeonMasterData.Migrations.Cream.resources
+C:\Users\Jack\source\repos\WebApplication1\DungeonMasterData\obj\Debug\DungeonMasterData.Migrations.InitialCreate.resources
+C:\Users\Jack\source\repos\WebApplication1\DungeonMasterData\obj\Debug\DungeonMasterData.Migrations.Amber.resources
+C:\Users\Jack\source\repos\WebApplication1\DungeonMasterData\obj\Debug\DungeonMasterData.Migrations.Blue.resources
+C:\Users\Jack\source\repos\WebApplication1\DungeonMasterData\obj\Debug\DungeonMasterData.Migrations.Cream.resources
+C:\Users\Jack\source\repos\WebApplication1\DungeonMasterData\obj\Debug\DungeonMasterData.csproj.GenerateResource.cache
