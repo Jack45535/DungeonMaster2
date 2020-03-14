@@ -104,7 +104,7 @@
     }
 </style>
 
-@foreach (var item in Model)
+@foreach (var game in Model)
 {
 <div id="GameContainer">
     <div class="row">
@@ -112,13 +112,13 @@
             <label id="Name">Name: </label>
         </div>
         <div class="col-md-2">
-            <label  class="input-group" id="NameInput">@Html.DisplayFor(modelItem => item.Name)</label>
+            <label  class="input-group" id="NameInput">@Html.DisplayFor(modelItem => game.Name)</label>
         </div>
         <div class="col-md-5" style="text-align:right;">
             <label id="Game Master">Game Master: </label>
         </div>
         <div class="col-md-2">
-            <label  class="input-group" id="GMInput">@Html.DisplayFor(modelItem => item.GameMaster)</label>
+            <label  class="input-group" id="GMInput">@Html.DisplayFor(modelItem => game.GameMaster)</label>
         </div>
     </div>
 
@@ -127,7 +127,7 @@
             <label id="DateCreated">Date Created: </label>
         </div>
         <div class="col-md-2">
-            <label  class="input-group" id="DateCreatedInput"> @Html.DisplayFor(model => item.DateCreated)</label>
+            <label  class="input-group" id="DateCreatedInput"> @Html.DisplayFor(model => game.DateCreated)</label>
         </div>
     </div>
 
@@ -136,7 +136,7 @@
             <label id="LastPlayed">Last Played:</label>
         </div>
         <div class="col-md-2">
-            <label class="input-group" id="LastPlayedInput">@Html.DisplayFor(model => item.DateLastOpened)</label>
+            <label class="input-group" id="LastPlayedInput">@Html.DisplayFor(model => game.DateLastOpened)</label>
         </div>
     </div>
 
@@ -149,16 +149,13 @@
                     <th>Owner</th>
                 </tr>
 
-                @foreach (var c in Model.)
-
-                <tr>
-                    <td>Jack</td>
-                    <td>Jack's Owner</td>
-                </tr>
-
-
-
-
+                @foreach (var c in game.Characters)
+                {
+                    <tr>
+                        <td>Jack</td>
+                        <td>Jack's Owner</td>
+                    </tr>
+                }
             </table>
             
         </div>
@@ -168,11 +165,11 @@
             <div style="padding-left:10px;">
                 @*<button class="OpenButton" id="OpenButton">Open</button>*@
                 @*@Html.ActionLink("Open", "Details", new { id = item.Id }, new { @class = "OpenButton" }) | @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "EditButton" })*@
-                @Html.ActionLink("Open", "Test", "Characters", new { id = item.Id }, new { @class = "OpenButton" }) | @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "EditButton" })
+                @Html.ActionLink("Open", "Test", "Characters", new { id = game.Id }, new { @class = "OpenButton" }) | @Html.ActionLink("Edit", "Edit", new { id = game.Id }, new { @class = "EditButton" })
             </div>
         </div>
         <div class="col-md-1">
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "DeleteButton" })
+            @Html.ActionLink("Delete", "Delete", new { id = game.Id }, new { @class = "DeleteButton" })
         </div>
     </div>
 </div>
