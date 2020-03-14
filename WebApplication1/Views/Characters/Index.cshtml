@@ -5,35 +5,82 @@
 }
 
 <style>
-    #Contain {
-        margin-top: 30px;
-        margin-bottom:10px;
-        background-color: lightgrey;
-        padding: 10px;
-        border:groove;
+    a:hover {
+        text-decoration: double;
+        color:lightcoral !important;
     }
 
-    #NameRow {
-        
+    body {
+        margin-top: 100px;
+        /*let intellisense do everything for you with this!!!!!*/
+        background-image: url("../../Images/grass.jpg");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #Contain {
+
+        margin-bottom: 10px;
+        background-color: black;
+        padding: 10px;
+        border: groove;
+        color: lime;
+        font-family: monospace;
     }
 
     #DescCont {
-        padding-top:10px;
+        padding-top:60px;
     }
 
     #MoneyRow {
-        padding-top: 10px;
+        padding-top: 60px;
     }
 
     #StatCont {
-        padding-top: 10px;
+        padding-top: 60px;
         padding-bottom: 10px;
     }
 
-    #CharIn {
-        color: red;
+    #INTSPEED {
+        padding-top:10px;
+        padding-bottom:10px;
     }
-  
+    div[target] {
+        text-align: center;
+        color: black;
+        border: solid;
+        border-right-color: darkslategray;
+        border-bottom-color: darkslategray;
+        background-color: white;
+    }
+    #DeleteButton {
+        text-align:right;
+        margin-top:10px;
+    }
+
+    .Delete:hover {
+        color:darkred !important;
+    }
+
+    #EditButton {
+        margin-top:10px;
+    }
+    
+    .Delete {
+
+        color:red;
+        padding:5px;
+    }
+
+    .a {
+        color:black !important;
+    }
+
+    #OpenButton {
+        margin-top:10px;
+    }
 </style>
 
 
@@ -44,19 +91,19 @@
         <div class="col-md-1">
             @Html.DisplayNameFor(model => model.Name)
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" target="_blank">
             @Html.DisplayFor(modelItem => item.Name)
         </div>
         <div class="col-md-1">
             @Html.DisplayNameFor(model => model.Owner)
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" target="_blank">
             @Html.DisplayFor(modelItem => item.Owner)
         </div>
         <div class="col-md-1">
             @Html.DisplayNameFor(model => model.Age)
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" target="_blank">
             @Html.DisplayFor(modelItem => item.Age)
         </div>
     </div>
@@ -65,7 +112,7 @@
         <div class="col-md-2">
             @Html.DisplayNameFor(model => model.CharDesc)
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5" target="_blank">
             @Html.DisplayFor(modelItem => item.CharDesc)
         </div>
     </div>
@@ -74,25 +121,25 @@
         <div class="col-md-1">
             @Html.DisplayNameFor(model => model.Plat)
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" target="_blank">
             @Html.DisplayFor(modelItem => item.Plat)
         </div>
         <div class="col-md-1">
             @Html.DisplayNameFor(model => model.Gold)
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" target="_blank">
             @Html.DisplayFor(modelItem => item.Gold)
         </div>
         <div class="col-md-1">
             @Html.DisplayNameFor(model => model.Silver)
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" target="_blank">
             @Html.DisplayFor(modelItem => item.Silver)
         </div>
         <div class="col-md-1">
             @Html.DisplayNameFor(model => model.Copper)
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" target="_blank">
             @Html.DisplayFor(modelItem => item.Copper)
         </div>
     </div>
@@ -101,57 +148,57 @@
     <div id="StatCont">
         <div class="row">
             <div class="col-md-1">
-                @Html.DisplayNameFor(model => model.Str)
+               Str
             </div>
-            <div class="col-md-1">
+            <div class="col-md-1" target="_blank">
                 @Html.DisplayFor(modelItem => item.Str)
             </div>
             <div class="col-md-1">
                 @Html.DisplayNameFor(model => model.Luck)
             </div>
-            <div class="col-md-1">
+            <div class="col-md-1" target="_blank">
                 @Html.DisplayFor(modelItem => item.Luck)
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" id="INTSPEED">
             <div class="col-md-1">
-                @Html.DisplayNameFor(model => model.Int)
+                Int
             </div>
-            <div class="col-md-1">
+            <div class="col-md-1" target="_blank">
                 @Html.DisplayFor(modelItem => item.Int)
             </div>
 
             <div class="col-md-1">
                 @Html.DisplayNameFor(model => model.Speed)
             </div>
-            <div class="col-md-1">
+            <div class="col-md-1" target="_blank">
                 @Html.DisplayFor(modelItem => item.Speed)
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-1">
-                @Html.DisplayNameFor(model => model.Dex)
+                Dex
             </div>
-            <div class="col-md-1">
+            <div class="col-md-1" target="_blank">
                 @Html.DisplayFor(modelItem => item.Dex)
             </div>
 
             <div class="col-md-1">
-                @Html.DisplayNameFor(model => model.Charisma)
+                Char
             </div>
-            <div class="col-md-1" id="CharIn">
+            <div class="col-md-1" id="DataChar" target="_blank">
                 @Html.DisplayFor(modelItem => item.Charisma)
             </div>
         </div>
     </div>
 
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-    </p>
+    <div class="row">
+        <div class="col-md-1" id="EditButton"> @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new {@class = "Edit" })</div>
+        <div class="col-md-1" id="OpenButton">@Html.ActionLink("Bag", "CheckItems", "Bags", new { id = item.Id }, new { @class = "Bag" })</div>
+        <div class="col-md-10" id="DeleteButton"> @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "Delete" })</div>
+    </div>
 </div>
             }
 
@@ -159,3 +206,4 @@
                 @Html.ActionLink("Create New", "Create")
             </p>
 
+            @*<img src="~/Images/goblin.jpg" />*@

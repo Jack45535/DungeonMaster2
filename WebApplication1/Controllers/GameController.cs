@@ -19,7 +19,7 @@ namespace WebApplication1.Controllers
         // GET: Game
         public ActionResult Index()
         {
-            var model = db.GetAll();
+            var model = db.GetAll().ToList();
             return View(model);
         }
 

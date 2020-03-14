@@ -20,12 +20,18 @@ namespace WebApplication1.Controllers
         {
             var characters = db.Characters.Include(c => c.Game);
             return View(characters.ToList());
+            
         }
 
         public ActionResult Test(int id)
         {
             var characters = db.Characters.Where(x=> x.GameId==id).Include(c => c.Game);
+            TempData["CustomViewId"] = id;
+            var baseurl = Request.Url.GetLeftPart(UriPartial.Authority);
+            TempData["UrlReferrer"] = baseurl;
             return View("Index",characters.ToList());
+            
+
         }
 
         // GET: Characters/Details/5
@@ -43,11 +49,14 @@ namespace WebApplication1.Controllers
             return View(character);
         }
 
+
+
         // GET: Characters/Create
         public ActionResult Create()
         {
             ViewBag.GameId = new SelectList(db.Game, "Id", "Name");
             return View();
+            
         }
 
         // POST: Characters/Create
@@ -61,11 +70,11 @@ namespace WebApplication1.Controllers
             {
                 db.Characters.Add(character);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Redirect(TempData["UrlReferrer"] + "/Characters/Test/" + TempData["CustomViewId"].ToString());
             }
 
             ViewBag.GameId = new SelectList(db.Game, "Id", "Name", character.GameId);
-            return View(character);
+            return Redirect(TempData["UrlReferrer"].ToString());
         }
 
         // GET: Characters/Edit/5
@@ -91,14 +100,16 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,GameId,Name,Owner,Age,CharDesc,Plat,Gold,Silver,Copper,Str,Int,Dex,Luck,Speed,Charisma")] Character character)
         {
+            int CustomViewId = (int)TempData["CustomViewId"];
+
             if (ModelState.IsValid)
             {
                 db.Entry(character).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Redirect(TempData["UrlReferrer"]+"/Characters/Test/"+CustomViewId.ToString());
             }
             ViewBag.GameId = new SelectList(db.Game, "Id", "Name", character.GameId);
-            return View(character);
+            return Redirect(TempData["UrlReferrer"].ToString());
         }
 
         // GET: Characters/Delete/5
@@ -121,10 +132,12 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            int CustomViewId = (int)TempData["CustomViewId"];
+
             Character character = db.Characters.Find(id);
             db.Characters.Remove(character);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Redirect(TempData["UrlReferrer"] + "/Characters/Test/" + CustomViewId.ToString());
         }
 
         protected override void Dispose(bool disposing)

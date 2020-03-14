@@ -6,8 +6,13 @@
 
 
 <style>
+
+    body {
+       margin-top: 100px;
+    }
+
     #GameContainer {
-        margin-top: 10px;
+        margin-top:5px;
         padding-top: 10px;
         padding-bottom: 10px;
         border: groove;
@@ -39,7 +44,7 @@
         background-color: greenyellow;
     }
 
-    .OpenButton {
+    /*.OpenButton {
         background-color: lightcoral !important;
         color: darkmagenta !important;
         border-color: gold !important;
@@ -61,22 +66,22 @@
 
     .OpenButton:hover {
         color: aqua !important;
-    }
+    }*/
 
     .DeleteButton {
-        background-color: red !important;
-        color: darkgrey !important;
-        border-color: gold !important;
+        /*background-color: red !important;*/
+        color: red !important;
+        /*border-color: gold !important;
         border: solid;
-        padding: 3px;
+        padding: 3px;*/
     }
 
     .DeleteButton:hover {
-        color:black !important;
+        color:darkred !important;
     }
 
     .NewButton {
-        background-color: forestgreen !important;
+        background-color: white !important;
         color: yellow !important;
         border-color: black !important;
         border: groove;
@@ -86,15 +91,15 @@
     }
 
     a:hover {
-        color: tan !important;
         text-decoration: none;
     }
 
     .input-group {
-        color:red;
-        background-color:darkgrey;
-        padding:5px;
-        border: solid;
+        color: black;
+        background-color: darkgrey;
+        padding: 5px;
+        border-bottom: solid;
+        border-right: solid;
         border-color: sandybrown;
     }
 </style>
@@ -138,6 +143,24 @@
     <div class="row">
         <div class="col-md-12">
             <label id="Party">Party:</label>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Owner</th>
+                </tr>
+
+                @foreach (var c in Model.)
+
+                <tr>
+                    <td>Jack</td>
+                    <td>Jack's Owner</td>
+                </tr>
+
+
+
+
+            </table>
+            
         </div>
     </div>
     <div class="row">

@@ -46,7 +46,7 @@ namespace DungeonMasterData.GameWorker
 
         public IEnumerable<Game> GetAll()
         {
-            return db.Game;
+            return db.Game.Include("Characters");
         }
     }
 }

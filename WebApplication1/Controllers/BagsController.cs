@@ -37,6 +37,12 @@ namespace WebApplication1.Controllers
             return View(bag);
         }
 
+        public ActionResult CheckItems(int id)
+        {
+            var contents = db.Bags.Where(x => x.CharacterId == id).Include(c => c.Character);
+            return View("Index", contents.ToList());
+        }
+
         // GET: Bags/Create
         public ActionResult Create()
         {
