@@ -44,6 +44,51 @@
         background-color: greenyellow;
     }
 
+    #PartyWrapper {
+        margin-left: 25px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    #Partylabel {
+        padding-left:0px;
+        font-size:large;
+    }
+
+    #PartyHeaderOwner {
+        border: solid;
+        border-color: blue;
+        color: white;
+        background-color:darkblue;
+        border-right-color: blue;
+    }
+
+    #PartyHeaderName {
+        border: solid;
+        background-color: darkblue;
+        border-right: 0px;
+        border-color: blue;
+        margin-top: 0px;
+        color: white;
+    }
+
+    #Partycellsname {
+        border: solid;
+        border-right: 0px;
+        border-top: none;
+        margin-top: 0px;
+        border-color: blue;
+        color: darkmagenta;
+    }
+
+    #Partycellsowner {
+        border: solid;
+        border-top: none;
+        margin-top: 0px;
+        border-color: blue;
+        color: darkmagenta;
+    }
+
     /*.OpenButton {
         background-color: lightcoral !important;
         color: darkmagenta !important;
@@ -102,6 +147,8 @@
         border-right: solid;
         border-color: sandybrown;
     }
+
+    
 </style>
 
 @foreach (var game in Model)
@@ -112,13 +159,13 @@
             <label id="Name">Name: </label>
         </div>
         <div class="col-md-2">
-            <label  class="input-group" id="NameInput">@Html.DisplayFor(modelItem => game.Name)</label>
+            <label class="input-group" id="NameInput">@Html.DisplayFor(modelItem => game.Name)</label>
         </div>
         <div class="col-md-5" style="text-align:right;">
             <label id="Game Master">Game Master: </label>
         </div>
         <div class="col-md-2">
-            <label  class="input-group" id="GMInput">@Html.DisplayFor(modelItem => game.GameMaster)</label>
+            <label class="input-group" id="GMInput">@Html.DisplayFor(modelItem => game.GameMaster)</label>
         </div>
     </div>
 
@@ -127,7 +174,7 @@
             <label id="DateCreated">Date Created: </label>
         </div>
         <div class="col-md-2">
-            <label  class="input-group" id="DateCreatedInput"> @Html.DisplayFor(model => game.DateCreated)</label>
+            <label class="input-group" id="DateCreatedInput"> @Html.DisplayFor(model => game.DateCreated)</label>
         </div>
     </div>
 
@@ -140,26 +187,43 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <label id="Party">Party:</label>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Owner</th>
-                </tr>
 
-                @foreach (var c in game.Characters)
-                {
-                    <tr>
-                        <td>Jack</td>
-                        <td>Jack's Owner</td>
-                    </tr>
-                }
-            </table>
-            
+
+    <div id="PartyWrapper">
+        <div class="row">
+            <div>
+                <label class="col-md-4" id="Partylabel">Party</label>
+            </div>
+        </div>
+        <div id="Partytable">
+            <div class="row" >
+                <div class="col-md-2" id="PartyHeaderName">
+                    <label>Name</label>
+                </div>
+                <div class="col-md-2" id="PartyHeaderOwner">
+                    <label>Owner</label>
+                </div>
+            </div>
+
+            @foreach (var character in game.Characters)
+            {
+                <div class="row">
+                    <div class="col-md-2" id="Partycellsname">
+                        <label>@Html.DisplayFor(model => character.Name)</label>
+                    </div>
+                    <div class="col-md-2" id="Partycellsowner">
+                        <label>@Html.DisplayFor(model => character.Owner)</label>
+                    </div>
+                </div>
+            }
         </div>
     </div>
+    
+
+
+
+
+
     <div class="row">
         <div class="col-md-11">
             <div style="padding-left:10px;">
