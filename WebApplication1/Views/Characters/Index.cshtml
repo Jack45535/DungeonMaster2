@@ -13,7 +13,7 @@
     body {
         margin-top: 100px;
         /*let intellisense do everything for you with this!!!!!*/
-        background-image: url("../../Images/mask.jpg");
+        background-image: url("../../Images/nerdy2.jpg");
         height: 100%;
         background-position: center;
         background-repeat: no-repeat;
@@ -22,7 +22,7 @@
 
     #Contain {
 
-        margin-bottom: 10px;
+        margin-bottom: 50px;
         background-color: black;
         padding: 10px;
         border: groove;
@@ -51,9 +51,9 @@
         text-align: center;
         color: black;
         border: solid;
-        border-right-color: darkslategray;
-        border-bottom-color: darkslategray;
-        background-color: white;
+        border-right-color: sandybrown;
+        border-bottom-color: sandybrown;
+        background-color: darkgray;
     }
     #DeleteButton {
         text-align:right;
@@ -81,6 +81,108 @@
     #OpenButton {
         margin-top:10px;
     }
+
+    #BagWrapper {
+        margin-left: 15px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    #Baglabel {
+        padding-left: 0px;
+        font-size:x-large;
+    }
+
+    #BagHeaderDescription {
+        border: solid;
+        border-color: blue;
+        color: white;
+        border-right: 0px;
+        background-color: darkblue;
+        border-right-color: blue;
+    }
+
+    #BagHeaderQuantity {
+        border: solid;
+        border-color: blue;
+        border-right:none;
+        color: white;
+        background-color: darkblue;
+        border-right-color: blue;
+    }
+
+    #BagHeaderName {
+        border: solid;
+        background-color: darkblue;
+        border-right: 0px;
+        border-color: blue;
+        margin-top: 0px;
+        color: white;
+    }
+
+    #BagHeaderEdit {
+        border: solid;
+        background-color: darkblue;
+        border-right: 0px;
+        border-color: blue;
+        margin-top: 0px;
+        color: white;
+    }
+
+    #BagHeaderDelete {
+        border: solid;
+        background-color: darkblue;
+        border-color: blue;
+        margin-top: 0px;
+        color: white;
+    }
+
+    #Bagcellsname {
+        border: solid;
+        border-right: 0px;
+        border-top: none;
+        margin-top: 0px;
+        border-color: blue;
+        color: darkmagenta;
+    }
+
+    #Bagcellsowner {
+        border: solid;
+        border-top: none;
+        border-right: 0px;
+        margin-top: 0px;
+        border-color: blue;
+        color: darkmagenta;
+    }
+
+    #BagQuantity {
+        border: solid;
+        border-top: none;
+        border-right: none;
+        margin-top: 0px;
+        border-color: blue;
+        color: darkmagenta;
+    }
+
+    #Deleteitem {
+        border: solid;
+        border-top: none;
+        margin-top: 0px;
+        border-color: blue;
+        color: darkmagenta;
+        padding-left: 0px;
+
+    }
+
+    #Edititem {
+        border: solid;
+        border-top: none;
+        margin-top: 0px;
+        border-right: 0px;
+        border-color: blue;
+        color: darkmagenta;
+        padding-left:0px;
+    }
 </style>
 
 
@@ -89,19 +191,19 @@
 <div id="Contain">
     <div class="row" id="NameRow">
         <div class="col-md-1">
-            @Html.DisplayNameFor(model => model.Name)
+            <p>Name:</p>
         </div>
-        <div class="col-md-1" target="_blank">
+        <div class="col-md-2" target="_blank">
             @Html.DisplayFor(modelItem => item.Name)
         </div>
         <div class="col-md-1">
-            @Html.DisplayNameFor(model => model.Owner)
+            <p>Owner:</p>
         </div>
-        <div class="col-md-1" target="_blank">
+        <div class="col-md-2" target="_blank">
             @Html.DisplayFor(modelItem => item.Owner)
         </div>
         <div class="col-md-1">
-            @Html.DisplayNameFor(model => model.Age)
+            <p>Age:</p>
         </div>
         <div class="col-md-1" target="_blank">
             @Html.DisplayFor(modelItem => item.Age)
@@ -110,34 +212,34 @@
 
     <div class="row" id="DescCont">
         <div class="col-md-2">
-            @Html.DisplayNameFor(model => model.CharDesc)
+            <p>General Description:</p>
         </div>
-        <div class="col-md-5" target="_blank">
+        <div class="col-md-5" target="_blank" style="text-align:left;">
             @Html.DisplayFor(modelItem => item.CharDesc)
         </div>
     </div>
 
     <div class="row" id="MoneyRow">
         <div class="col-md-1">
-            @Html.DisplayNameFor(model => model.Plat)
+            <p>Platinum:</p>
         </div>
         <div class="col-md-1" target="_blank">
             @Html.DisplayFor(modelItem => item.Plat)
         </div>
         <div class="col-md-1">
-            @Html.DisplayNameFor(model => model.Gold)
+            <p>Gold:</p>
         </div>
         <div class="col-md-1" target="_blank">
             @Html.DisplayFor(modelItem => item.Gold)
         </div>
         <div class="col-md-1">
-            @Html.DisplayNameFor(model => model.Silver)
+            <p>Silver:</p>
         </div>
         <div class="col-md-1" target="_blank">
             @Html.DisplayFor(modelItem => item.Silver)
         </div>
         <div class="col-md-1">
-            @Html.DisplayNameFor(model => model.Copper)
+            <p>Copper:</p>
         </div>
         <div class="col-md-1" target="_blank">
             @Html.DisplayFor(modelItem => item.Copper)
@@ -148,13 +250,13 @@
     <div id="StatCont">
         <div class="row">
             <div class="col-md-1">
-               Str
+                <p>Str:</p>
             </div>
             <div class="col-md-1" target="_blank">
                 @Html.DisplayFor(modelItem => item.Str)
             </div>
             <div class="col-md-1">
-                @Html.DisplayNameFor(model => model.Luck)
+                <p>Luck:</p>
             </div>
             <div class="col-md-1" target="_blank">
                 @Html.DisplayFor(modelItem => item.Luck)
@@ -163,14 +265,14 @@
 
         <div class="row" id="INTSPEED">
             <div class="col-md-1">
-                Int
+                <p>Int:</p>
             </div>
             <div class="col-md-1" target="_blank">
                 @Html.DisplayFor(modelItem => item.Int)
             </div>
 
             <div class="col-md-1">
-                @Html.DisplayNameFor(model => model.Speed)
+                <p>Speed:</p>
             </div>
             <div class="col-md-1" target="_blank">
                 @Html.DisplayFor(modelItem => item.Speed)
@@ -179,14 +281,14 @@
 
         <div class="row">
             <div class="col-md-1">
-                Dex
+                <p>Dex:</p>
             </div>
             <div class="col-md-1" target="_blank">
                 @Html.DisplayFor(modelItem => item.Dex)
             </div>
 
             <div class="col-md-1">
-                Char
+                <p>Char:</p>
             </div>
             <div class="col-md-1" id="DataChar" target="_blank">
                 @Html.DisplayFor(modelItem => item.Charisma)
@@ -194,13 +296,63 @@
         </div>
     </div>
 
+    @*BAG*@
+    <div id="BagWrapper">
+        <div class="row">
+            <div>
+                <label class="col-md-4" id="Baglabel">Bag</label>
+            </div>
+        </div>
+
+        <div id="Bagtable">
+            <div class="row">
+                <div class="col-md-2" id="BagHeaderName">
+                    <label>Item Name</label>
+                </div>
+                <div class="col-md-5" id="BagHeaderDescription">
+                    <label>Description</label>
+                </div>
+                <div class="col-md-1" id="BagHeaderQuantity">
+                    <label>Quantity</label>
+                </div>
+                <div class="col-md-1" id="BagHeaderEdit">
+                    <label>Edit</label>
+                </div>
+                <div class="col-md-1" id="BagHeaderDelete">
+                    <label>Delete</label>
+                </div>
+            </div>
+
+            @foreach (var items in item.Bags)
+            {
+                <div class="row">
+                    <div class="col-md-2" id="Bagcellsname">
+                        <label>@Html.DisplayFor(model => items.Name)</label>
+                    </div>
+                    <div class="col-md-5" id="Bagcellsowner">
+                        <label>@Html.DisplayFor(model => items.Description)</label>
+                    </div>
+                    <div class="col-md-1" id="BagQuantity">
+                        <label>@Html.DisplayFor(model => items.Quantity)</label>
+                    </div>
+                    <div class="col-md-1" id="Edititem"> 
+                        <label>@Html.ActionLink("Edit", "Edit", "Bags", new { id = items.Id }, new { @class = "Edit" })</label>
+                    </div>
+                    <div class="col-md-1" id="Deleteitem"> 
+                        <label>@Html.ActionLink("Delete", "Delete", "Bags", new { id = items.Id }, new { @class = "Delete" })</label>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
     <div class="row">
-        <div class="col-md-1" id="EditButton"> @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new {@class = "Edit" })</div>
-        <div class="col-md-1" id="OpenButton">@Html.ActionLink("Bag", "CheckItems", "Bags", new { id = item.Id }, new { @class = "Bag" })</div>
+        <div class="col-md-1" id="EditButton"> @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "Edit" })</div>
+        <div class="col-md-1" id="OpenButton">@Html.ActionLink("New Item", "Create", "Bags", new { id = item.Id }, new { @class = "Bag" })</div>
         <div class="col-md-10" id="DeleteButton"> @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "Delete" })</div>
     </div>
 </div>
-            }
+ }
 
             <p>
                 @Html.ActionLink("Create New", "Create")

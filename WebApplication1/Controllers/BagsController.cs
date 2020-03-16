@@ -61,7 +61,7 @@ namespace WebApplication1.Controllers
             {
                 db.Bags.Add(bag);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Redirect(TempData["UrlReferrer"] + "/Characters/Test/" + TempData["CustomViewId"].ToString());
             }
 
             ViewBag.CharacterId = new SelectList(db.Characters, "Id", "Name", bag.CharacterId);
@@ -95,7 +95,7 @@ namespace WebApplication1.Controllers
             {
                 db.Entry(bag).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Redirect(TempData["UrlReferrer"] + "/Characters/Test/" + TempData["CustomViewId"].ToString());
             }
             ViewBag.CharacterId = new SelectList(db.Characters, "Id", "Name", bag.CharacterId);
             return View(bag);
@@ -124,7 +124,7 @@ namespace WebApplication1.Controllers
             Bag bag = db.Bags.Find(id);
             db.Bags.Remove(bag);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Redirect(TempData["UrlReferrer"] + "/Characters/Test/" + TempData["CustomViewId"].ToString());
         }
 
         protected override void Dispose(bool disposing)
