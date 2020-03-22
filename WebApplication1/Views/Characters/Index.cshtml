@@ -7,31 +7,29 @@
 <style>
     a:hover {
         text-decoration: double;
-        color:lightcoral !important;
+        color: lightcoral !important;
     }
 
     body {
         margin-top: 100px;
-        /*let intellisense do everything for you with this!!!!!*/
-        background-image: url("../../Images/nerdy2.jpg");
-        height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-color:black;
     }
 
     #Contain {
-
         margin-bottom: 50px;
         background-color: black;
         padding: 10px;
         border: groove;
         color: lime;
         font-family: monospace;
+        height: 100%;
+        background-position: bottom right;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     #DescCont {
-        padding-top:60px;
+        padding-top: 60px;
     }
 
     #MoneyRow {
@@ -44,9 +42,10 @@
     }
 
     #INTSPEED {
-        padding-top:10px;
-        padding-bottom:10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
+
     div[target] {
         text-align: center;
         color: black;
@@ -55,42 +54,41 @@
         border-bottom-color: sandybrown;
         background-color: darkgray;
     }
+
     #DeleteButton {
-        text-align:right;
-        margin-top:10px;
+        text-align: right;
+        margin-top: 10px;
     }
 
     .Delete:hover {
-        color:darkred !important;
+        color: darkred !important;
     }
 
     #EditButton {
-        margin-top:10px;
+        margin-top: 10px;
     }
-    
-    .Delete {
 
-        color:red;
-        padding:5px;
+    .Delete {
+        color: red;
+        padding: 5px;
     }
 
     .a {
-        color:black !important;
+        color: black !important;
     }
 
     #OpenButton {
-        margin-top:10px;
+        margin-top: 10px;
     }
 
     #BagWrapper {
         margin-left: 15px;
-        margin-bottom: 10px;
         margin-top: 10px;
     }
 
     #Baglabel {
         padding-left: 0px;
-        font-size:x-large;
+        font-size: x-large;
     }
 
     #BagHeaderDescription {
@@ -105,7 +103,7 @@
     #BagHeaderQuantity {
         border: solid;
         border-color: blue;
-        border-right:none;
+        border-right: none;
         color: white;
         background-color: darkblue;
         border-right-color: blue;
@@ -127,6 +125,7 @@
         border-color: blue;
         margin-top: 0px;
         color: white;
+        text-align: center;
     }
 
     #BagHeaderDelete {
@@ -135,6 +134,7 @@
         border-color: blue;
         margin-top: 0px;
         color: white;
+        text-align: center;
     }
 
     #Bagcellsname {
@@ -143,7 +143,8 @@
         border-top: none;
         margin-top: 0px;
         border-color: blue;
-        color: darkmagenta;
+        color: blue;
+        background-color: white;
     }
 
     #Bagcellsowner {
@@ -152,7 +153,8 @@
         border-right: 0px;
         margin-top: 0px;
         border-color: blue;
-        color: darkmagenta;
+        color: blue;
+        background-color: white;
     }
 
     #BagQuantity {
@@ -161,7 +163,8 @@
         border-right: none;
         margin-top: 0px;
         border-color: blue;
-        color: darkmagenta;
+        color: blue;
+        background-color: white;
     }
 
     #Deleteitem {
@@ -169,9 +172,8 @@
         border-top: none;
         margin-top: 0px;
         border-color: blue;
-        color: darkmagenta;
-        padding-left: 0px;
-
+        text-align: center;
+        background-color: white;
     }
 
     #Edititem {
@@ -180,182 +182,496 @@
         margin-top: 0px;
         border-right: 0px;
         border-color: blue;
-        color: darkmagenta;
-        padding-left:0px;
+        text-align: center;
+        background-color: white;
+    }
+
+
+
+    #SpellWrapper {
+        margin-left: 15px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    #Spelllabel {
+        padding-left: 0px;
+        font-size: x-large;
+    }
+
+    #SpellHeaderDescription {
+        border: solid;
+        border-color: blue;
+        color: white;
+        border-right: 0px;
+        background-color: darkblue;
+        border-right-color: blue;
+    }
+
+    #SpellHeaderQuantity {
+        border: solid;
+        border-color: blue;
+        border-right: none;
+        color: white;
+        background-color: darkblue;
+        border-right-color: blue;
+    }
+
+    #SpellHeaderName {
+        border: solid;
+        background-color: darkblue;
+        border-right: 0px;
+        border-color: blue;
+        margin-top: 0px;
+        color: white;
+    }
+
+    #SpellHeaderEdit {
+        border: solid;
+        background-color: darkblue;
+        border-right: 0px;
+        border-color: blue;
+        margin-top: 0px;
+        color: white;
+        text-align: center;
+    }
+
+    #SpellHeaderDelete {
+        border: solid;
+        background-color: darkblue;
+        border-color: blue;
+        margin-top: 0px;
+        color: white;
+        text-align: center;
+    }
+
+    #Spellcellsname {
+        border: solid;
+        border-right: 0px;
+        border-top: none;
+        margin-top: 0px;
+        border-color: blue;
+        color: blue;
+        background-color: white;
+    }
+
+    #Spellcellsowner {
+        border: solid;
+        border-top: none;
+        border-right: 0px;
+        margin-top: 0px;
+        border-color: blue;
+        color: blue;
+        background-color: white;
+    }
+
+    #SpellQuantity {
+        border: solid;
+        border-top: none;
+        border-right: none;
+        margin-top: 0px;
+        border-color: blue;
+        color: blue;
+        background-color: white;
+    }
+
+    #PetWrapper {
+        margin-left: 15px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    #Petlabel {
+        padding-left: 0px;
+        font-size: x-large;
+    }
+
+    #PetHeaderDescription {
+        border: solid;
+        border-color: blue;
+        color: white;
+        border-right: 0px;
+        background-color: darkblue;
+        border-right-color: blue;
+    }
+
+    #PetHeaderQuantity {
+        border: solid;
+        border-color: blue;
+        border-right: none;
+        color: white;
+        background-color: darkblue;
+        border-right-color: blue;
+    }
+
+    #PetHeaderName {
+        border: solid;
+        background-color: darkblue;
+        border-right: 0px;
+        border-color: blue;
+        margin-top: 0px;
+        color: white;
+    }
+
+    #PetHeaderEdit {
+        border: solid;
+        background-color: darkblue;
+        border-right: 0px;
+        border-color: blue;
+        margin-top: 0px;
+        color: white;
+        text-align: center;
+    }
+
+    #PetHeaderDelete {
+        border: solid;
+        background-color: darkblue;
+        border-color: blue;
+        margin-top: 0px;
+        color: white;
+        text-align: center;
+    }
+
+    #Petcellsname {
+        border: solid;
+        border-right: 0px;
+        border-top: none;
+        margin-top: 0px;
+        border-color: blue;
+        color: blue;
+        background-color: white;
+    }
+
+    #Petcellsowner {
+        border: solid;
+        border-top: none;
+        border-right: 0px;
+        margin-top: 0px;
+        border-color: blue;
+        color: blue;
+        background-color: white;
+    }
+
+    #NewItem {
+        border: solid;
+        border-top: none;
+        margin-top: 0px;
+        border-color: blue;
+        text-align: center;
+        background-color: black;
+    }
+
+    #NewPet {
+        border: solid;
+        border-top: none;
+        margin-top: 0px;
+        border-color: blue;
+        text-align: center;
+        background-color: black;
+    }
+
+    #NewSpell {
+        border: solid;
+        border-top: none;
+        margin-top: 0px;
+        border-color: blue;
+        text-align: center;
+        background-color:black;
     }
 </style>
 
 
 @foreach (var item in Model)
 {
-<div id="Contain">
-    <div class="row" id="NameRow">
-        <div class="col-md-1">
-            <p>Name:</p>
-        </div>
-        <div class="col-md-2" target="_blank">
-            @Html.DisplayFor(modelItem => item.Name)
-        </div>
-        <div class="col-md-1">
-            <p>Owner:</p>
-        </div>
-        <div class="col-md-2" target="_blank">
-            @Html.DisplayFor(modelItem => item.Owner)
-        </div>
-        <div class="col-md-1">
-            <p>Age:</p>
-        </div>
-        <div class="col-md-1" target="_blank">
-            @Html.DisplayFor(modelItem => item.Age)
-        </div>
-    </div>
-
-    <div class="row" id="DescCont">
-        <div class="col-md-2">
-            <p>General Description:</p>
-        </div>
-        <div class="col-md-5" target="_blank" style="text-align:left;">
-            @Html.DisplayFor(modelItem => item.CharDesc)
-        </div>
-    </div>
-
-    <div class="row" id="MoneyRow">
-        <div class="col-md-1">
-            <p>Platinum:</p>
-        </div>
-        <div class="col-md-1" target="_blank">
-            @Html.DisplayFor(modelItem => item.Plat)
-        </div>
-        <div class="col-md-1">
-            <p>Gold:</p>
-        </div>
-        <div class="col-md-1" target="_blank">
-            @Html.DisplayFor(modelItem => item.Gold)
-        </div>
-        <div class="col-md-1">
-            <p>Silver:</p>
-        </div>
-        <div class="col-md-1" target="_blank">
-            @Html.DisplayFor(modelItem => item.Silver)
-        </div>
-        <div class="col-md-1">
-            <p>Copper:</p>
-        </div>
-        <div class="col-md-1" target="_blank">
-            @Html.DisplayFor(modelItem => item.Copper)
-        </div>
-    </div>
-
-
-    <div id="StatCont">
-        <div class="row">
+    var imgname = "../../Images/" + item.CharacterBackground.ToString() + ".jpg";
+    <div id="Contain" style="background-image:url('@imgname');">
+        @Html.HiddenFor(modelItem => item.CharacterBackground)
+        <div class="row" id="NameRow">
             <div class="col-md-1">
-                <p>Str:</p>
+                <p>Name:</p>
+            </div>
+            <div class="col-md-2" target="_blank">
+                @Html.DisplayFor(modelItem => item.Name)
+            </div>
+            <div class="col-md-1">
+                <p>Owner:</p>
+            </div>
+            <div class="col-md-2" target="_blank">
+                @Html.DisplayFor(modelItem => item.Owner)
+            </div>
+            <div class="col-md-1">
+                <p>Age:</p>
             </div>
             <div class="col-md-1" target="_blank">
-                @Html.DisplayFor(modelItem => item.Str)
-            </div>
-            <div class="col-md-1">
-                <p>Luck:</p>
-            </div>
-            <div class="col-md-1" target="_blank">
-                @Html.DisplayFor(modelItem => item.Luck)
+                @Html.DisplayFor(modelItem => item.Age)
             </div>
         </div>
 
-        <div class="row" id="INTSPEED">
-            <div class="col-md-1">
-                <p>Int:</p>
+        <div class="row" id="DescCont">
+            <div class="col-md-2">
+                <p>General Description:</p>
             </div>
-            <div class="col-md-1" target="_blank">
-                @Html.DisplayFor(modelItem => item.Int)
-            </div>
-
-            <div class="col-md-1">
-                <p>Speed:</p>
-            </div>
-            <div class="col-md-1" target="_blank">
-                @Html.DisplayFor(modelItem => item.Speed)
+            <div class="col-md-5" target="_blank" style="text-align:left;">
+                @Html.DisplayFor(modelItem => item.CharDesc)
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" id="MoneyRow">
             <div class="col-md-1">
-                <p>Dex:</p>
+                <p>Platinum:</p>
             </div>
             <div class="col-md-1" target="_blank">
-                @Html.DisplayFor(modelItem => item.Dex)
+                @Html.DisplayFor(modelItem => item.Plat)
             </div>
-
             <div class="col-md-1">
-                <p>Char:</p>
+                <p>Gold:</p>
             </div>
-            <div class="col-md-1" id="DataChar" target="_blank">
-                @Html.DisplayFor(modelItem => item.Charisma)
+            <div class="col-md-1" target="_blank">
+                @Html.DisplayFor(modelItem => item.Gold)
+            </div>
+            <div class="col-md-1">
+                <p>Silver:</p>
+            </div>
+            <div class="col-md-1" target="_blank">
+                @Html.DisplayFor(modelItem => item.Silver)
+            </div>
+            <div class="col-md-1">
+                <p>Copper:</p>
+            </div>
+            <div class="col-md-1" target="_blank">
+                @Html.DisplayFor(modelItem => item.Copper)
             </div>
         </div>
-    </div>
 
-    @*BAG*@
-    <div id="BagWrapper">
-        <div class="row">
-            <div>
-                <label class="col-md-4" id="Baglabel">Bag</label>
-            </div>
-        </div>
 
-        <div id="Bagtable">
+        <div id="StatCont">
             <div class="row">
-                <div class="col-md-2" id="BagHeaderName">
-                    <label>Item Name</label>
+                <div class="col-md-1">
+                    <p>Str:</p>
                 </div>
-                <div class="col-md-5" id="BagHeaderDescription">
-                    <label>Description</label>
+                <div class="col-md-1" target="_blank">
+                    @Html.DisplayFor(modelItem => item.Str)
                 </div>
-                <div class="col-md-1" id="BagHeaderQuantity">
-                    <label>Quantity</label>
+                <div class="col-md-1">
+                    <p>Luck:</p>
                 </div>
-                <div class="col-md-1" id="BagHeaderEdit">
-                    <label>Edit</label>
-                </div>
-                <div class="col-md-1" id="BagHeaderDelete">
-                    <label>Delete</label>
+                <div class="col-md-1" target="_blank">
+                    @Html.DisplayFor(modelItem => item.Luck)
                 </div>
             </div>
 
-            @foreach (var items in item.Bags)
-            {
+            <div class="row" id="INTSPEED">
+                <div class="col-md-1">
+                    <p>Int:</p>
+                </div>
+                <div class="col-md-1" target="_blank">
+                    @Html.DisplayFor(modelItem => item.Int)
+                </div>
+
+                <div class="col-md-1">
+                    <p>Speed:</p>
+                </div>
+                <div class="col-md-1" target="_blank">
+                    @Html.DisplayFor(modelItem => item.Speed)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-1">
+                    <p>Dex:</p>
+                </div>
+                <div class="col-md-1" target="_blank">
+                    @Html.DisplayFor(modelItem => item.Dex)
+                </div>
+
+                <div class="col-md-1">
+                    <p>Char:</p>
+                </div>
+                <div class="col-md-1" id="DataChar" target="_blank">
+                    @Html.DisplayFor(modelItem => item.Charisma)
+                </div>
+            </div>
+        </div>
+
+        @*BAG*@
+        <div id="BagWrapper">
+            <div class="row">
+                <div>
+                    <label class="col-md-4" id="Baglabel">Bag</label>
+                </div>
+            </div>
+
+            <div id="Bagtable">
                 <div class="row">
-                    <div class="col-md-2" id="Bagcellsname">
-                        <label>@Html.DisplayFor(model => items.Name)</label>
+                    <div class="col-md-2" id="BagHeaderName">
+                        <label>Item Name</label>
                     </div>
-                    <div class="col-md-5" id="Bagcellsowner">
-                        <label>@Html.DisplayFor(model => items.Description)</label>
+                    <div class="col-md-5" id="BagHeaderDescription">
+                        <label>Description</label>
                     </div>
-                    <div class="col-md-1" id="BagQuantity">
-                        <label>@Html.DisplayFor(model => items.Quantity)</label>
+                    <div class="col-md-1" id="BagHeaderQuantity">
+                        <label>Quantity</label>
                     </div>
-                    <div class="col-md-1" id="Edititem"> 
-                        <label>@Html.ActionLink("Edit", "Edit", "Bags", new { id = items.Id }, new { @class = "Edit" })</label>
+                    <div class="col-md-1" id="BagHeaderEdit">
+                        <label>Edit</label>
                     </div>
-                    <div class="col-md-1" id="Deleteitem"> 
-                        <label>@Html.ActionLink("Delete", "Delete", "Bags", new { id = items.Id }, new { @class = "Delete" })</label>
+                    <div class="col-md-1" id="BagHeaderDelete">
+                        <label>Delete</label>
                     </div>
                 </div>
-            }
+
+                @foreach (var items in item.Bags)
+                {
+                    <div class="row">
+                        <div class="col-md-2" id="Bagcellsname">
+                            <label>@Html.DisplayFor(model => items.Name)</label>
+                        </div>
+                        <div class="col-md-5" id="Bagcellsowner">
+                            <label>@Html.DisplayFor(model => items.Description)</label>
+                        </div>
+                        <div class="col-md-1" id="BagQuantity">
+                            <label>@Html.DisplayFor(model => items.Quantity)</label>
+                        </div>
+                        <div class="col-md-1" id="Edititem">
+                            <label>@Html.ActionLink("Edit", "Edit", "Bags", new { id = items.Id }, new { @class = "Edit" })</label>
+                        </div>
+                        <div class="col-md-1" id="Deleteitem">
+                            <label>@Html.ActionLink("Delete", "Delete", "Bags", new { id = items.Id }, new { @class = "Delete" })</label>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="row">
+                <div class="col-md-10" id="NewItem">@Html.ActionLink("New Item", "Create", "Bags", new { id = item.Id }, new { @class = "Bag" })</div>
+            </div>
+
+        </div>
+
+
+
+        @*Spells*@
+
+        <div id="SpellWrapper">
+            <div class="row">
+                <div>
+                    <label class="col-md-4" id="Spelllabel">Spell</label>
+                </div>
+            </div>
+
+            <div id="Spelltable">
+                <div class="row">
+                    <div class="col-md-2" id="SpellHeaderName">
+                        <label>Spell Name</label>
+                    </div>
+                    <div class="col-md-5" id="SpellHeaderDescription">
+                        <label>Description</label>
+                    </div>
+                    <div class="col-md-1" id="SpellHeaderQuantity">
+                        <label>Intensity</label>
+                    </div>
+                    <div class="col-md-1" id="SpellHeaderEdit">
+                        <label>Edit</label>
+                    </div>
+                    <div class="col-md-1" id="SpellHeaderDelete">
+                        <label>Delete</label>
+                    </div>
+                </div>
+
+                @foreach (var spells in item.Spells)
+                {
+                    <div class="row">
+                        <div class="col-md-2" id="Spellcellsname">
+                            <label>@Html.DisplayFor(model => spells.Name)</label>
+                        </div>
+                        <div class="col-md-5" id="Spellcellsowner">
+                            <label>@Html.DisplayFor(model => spells.Description)</label>
+                        </div>
+                        <div class="col-md-1" id="SpellQuantity">
+                            <label>@Html.DisplayFor(model => spells.Intensity)</label>
+                        </div>
+                        <div class="col-md-1" id="Edititem">
+                            <label>@Html.ActionLink("Edit", "Edit", "Spells", new { id = spells.Id }, new { @class = "Edit" })</label>
+                        </div>
+                        <div class="col-md-1" id="Deleteitem">
+                            <label>@Html.ActionLink("Delete", "Delete", "Spells", new { id = spells.Id }, new { @class = "Delete" })</label>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="row">
+                <div class="col-md-10" id="NewSpell">@Html.ActionLink("New Spell", "Create", "Spells", new { id = item.Id }, new { @class = "Spell" })</div>
+            </div>
+
+        </div>
+
+
+
+
+
+        @*Pets*@
+
+        <div id="PetWrapper">
+            <div class="row">
+                <div>
+                    <label class="col-md-4" id="Petlabel">Pet</label>
+                </div>
+            </div>
+
+            <div id="Pettable">
+                <div class="row">
+                    <div class="col-md-2" id="PetHeaderName">
+                        <label>Pet Name</label>
+                    </div>
+                    <div class="col-md-5" id="PetHeaderDescription">
+                        <label>Description</label>
+                    </div>
+                    <div class="col-md-1" id="PetHeaderEdit">
+                        <label>Edit</label>
+                    </div>
+                    <div class="col-md-1" id="PetHeaderDelete">
+                        <label>Delete</label>
+                    </div>
+                </div>
+
+                @foreach (var Pets in item.Pets)
+                {
+                    <div class="row">
+                        <div class="col-md-2" id="Petcellsname">
+                            <label>@Html.DisplayFor(model => Pets.Name)</label>
+                        </div>
+                        <div class="col-md-5" id="Petcellsowner">
+                            <label>@Html.DisplayFor(model => Pets.Description)</label>
+                        </div>
+                        <div class="col-md-1" id="Edititem">
+                            <label>@Html.ActionLink("Edit", "Edit", "Pets", new { id = Pets.Id }, new { @class = "Edit" })</label>
+                        </div>
+                        <div class="col-md-1" id="Deleteitem">
+                            <label>@Html.ActionLink("Delete", "Delete", "Pets", new { id = Pets.Id }, new { @class = "Delete" })</label>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="row">
+                <div class="col-md-9" id="NewPet">
+                    @Html.ActionLink("New Pet", "Create", "Pets", new { id = item.Id }, new { @class = "Pet" })
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-md-2" id="EditButton"> @Html.ActionLink("Edit Character", "Edit", new { id = item.Id }, new { @class = "Edit" })</div>
+            <div class="col-md-10" id="DeleteButton"> @Html.ActionLink("Delete Character", "Delete", new { id = item.Id }, new { @class = "Delete" })</div>
         </div>
     </div>
+}
 
-    <div class="row">
-        <div class="col-md-1" id="EditButton"> @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "Edit" })</div>
-        <div class="col-md-1" id="OpenButton">@Html.ActionLink("New Item", "Create", "Bags", new { id = item.Id }, new { @class = "Bag" })</div>
-        <div class="col-md-10" id="DeleteButton"> @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "Delete" })</div>
-    </div>
-</div>
- }
-
-            <p>
-                @Html.ActionLink("Create New", "Create")
-            </p>
-
-            @*<img src="~/Images/goblin.jpg" />*@
+<p>
+    @Html.ActionLink("Create New Character", "Create")
+</p>

@@ -13,5 +13,7 @@ namespace DungeonMasterData.GameWorker
         public DbSet<Game> Game { get; set; }
         public DbSet<Character> Characters { get; set; }
         public DbSet<Bag> Bags { get; set; }
+        public DbSet<Spell> Spells { get; set; }
+        public DbSet<Pet> Pets { get; set; }
     }
 }

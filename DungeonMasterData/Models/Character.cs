@@ -52,11 +52,35 @@ namespace DungeonMasterData.Models
 
         public int Charisma { get; set; }
 
+        [Required(AllowEmptyStrings = true)]
+        public Background CharacterBackground { get; set; }
+
+        public enum Background
+        {
+
+            Dragon,
+            Evil,
+            Mage,
+            Natural,
+            Ninja,
+            None,
+            Shaman,
+            Warrior,
+            Undead
+        }
+
+
         public virtual List<Bag> Bags { get; set; }
+
+        public virtual List<Spell> Spells { get; set; }
+
+        public virtual List<Pet> Pets { get; set; }
 
         public Character()
         {
             Bags = new List<Bag>();
+            Spells = new List<Spell>();
+            Pets = new List<Pet>();
         }
     }
 }
